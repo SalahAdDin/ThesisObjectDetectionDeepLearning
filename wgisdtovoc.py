@@ -55,11 +55,16 @@ for path, dirs, files in os.walk(annotation_folder_path):
                 bbox_height = df['H'].iloc[i].astype(float) * height
                 center_x = df['CX'].iloc[i].astype(float) * width
                 center_y = df['CY'].iloc[i].astype(float) * height
+                
+                xmin = center_x - (bbox_width / 2)
+                ymin = center_y - (bbox_height / 2)
+                xmax = center_x + (bbox_width / 2)
+                ymax = center_y + (bbox_height / 2)
 
-                ET.SubElement(bbox, 'xmin').text = str(center_x - (bbox_width / 2))
-                ET.SubElement(bbox, 'ymin').text = str(center_y - (bbox_height / 2))
-                ET.SubElement(bbox, 'xmax').text = str(center_x + (bbox_width / 2))
-                ET.SubElement(bbox, 'ymax').text = str(center_y + (bbox_height / 2))
+                ET.SubElement(bbox, 'xmin').text = str(max(xmin,1.1))
+                ET.SubElement(bbox, 'ymin').text = str(max(ymin,1.1))
+                ET.SubElement(bbox, 'xmax').text = str(min(xmax,width))
+                ET.SubElement(bbox, 'ymax').text = str(min(ymax,height))
 
             tree = ET.ElementTree(annotation)
             tree.write(os.path.join(os.path.abspath(path), each_file.replace(".txt", ".xml")), encoding='utf8')
