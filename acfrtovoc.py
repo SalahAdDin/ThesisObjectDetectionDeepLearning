@@ -79,8 +79,8 @@ for path, dirs, files in os.walk(annotation_folder_path):
                     xmax = df['c-x'].iloc[i] + df['radius'].iloc[i]
                     ymax = df['c-y'].iloc[i] + df['radius'].iloc[i]
 
-                ET.SubElement(bbox, 'xmin').text = str(max(xmin,1,1))
-                ET.SubElement(bbox, 'ymin').text = str(max(ymin,1,1))
+                ET.SubElement(bbox, 'xmin').text = str(max(xmin,1.1))
+                ET.SubElement(bbox, 'ymin').text = str(max(ymin,1.1))
                 ET.SubElement(bbox, 'xmax').text = str(min(xmax,width))
                 ET.SubElement(bbox, 'ymax').text = str(min(ymax,height))
 
