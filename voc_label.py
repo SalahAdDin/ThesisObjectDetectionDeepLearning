@@ -1,12 +1,25 @@
-import xml.etree.ElementTree as ET
-import pickle
+import argparse
 import os
+import pickle
+import xml.etree.ElementTree as ET
+
 from os import listdir, getcwd
 from os.path import join
 
-sets=[('2007', 'train'), ('2007', 'val'), ('2007', 'test')]
+parser = argparse.ArgumentParser()
+parser.add_argument("-p", "--path", help="Directory")  # Folder path
+parser.add_argument("-ie", '--image-extension',
+                    help='Declares the dataset images\' extension.', default='.jpg')
+args = parser.parse_args()
 
+
+sets = ['train', 'val', 'test']
 classes = ["M", "uva", "almond", "apple", "mango"]
+
+folder_path = args.path
+annotation_folder_path = folder_path + "/Annotations/"
+image_folder_path = folder_path + "/JPEGImages/"
+labels_folder = os.path.join(os.path.abspath(folder_path), 'labels/')
 
 
 def convert(size, box):
@@ -20,12 +33,15 @@ def convert(size, box):
     w = w*dw
     y = y*dh
     h = h*dh
-    return (x,y,w,h)
+    return (x, y, w, h)
 
-def convert_annotation(year, image_id):
-    in_file = open('VOCDevkit/VOC%s/Annotations/%s.xml'%(year, image_id))
-    out_file = open('VOCDevkit/VOC%s/labels/%s.txt'%(year, image_id), 'w')
-    tree=ET.parse(in_file)
+
+def convert_annotation(image_id):
+    in_file = open(os.path.join(os.path.abspath(
+        annotation_folder_path), '{}.xml'.format(image_id)))
+    out_file = open(os.path.join(
+        labels_folder, '{}.txt'.format(image_id)), 'w')
+    tree = ET.parse(in_file)
     root = tree.getroot()
     size = root.find('size')
     w = int(size.find('width').text)
@@ -38,19 +54,25 @@ def convert_annotation(year, image_id):
             continue
         cls_id = classes.index(cls)
         xmlbox = obj.find('bndbox')
-        b = (float(xmlbox.find('xmin').text), float(xmlbox.find('xmax').text), float(xmlbox.find('ymin').text), float(xmlbox.find('ymax').text))
-        bb = convert((w,h), b)
-        out_file.write(str(cls_id) + " " + " ".join([str(a) for a in bb]) + '\n')
+        b = (float(xmlbox.find('xmin').text), float(xmlbox.find('xmax').text), float(
+            xmlbox.find('ymin').text), float(xmlbox.find('ymax').text))
+        bb = convert((w, h), b)
+        out_file.write(str(cls_id) + " " +
+                       " ".join([str(a) for a in bb]) + '\n')
 
-wd = getcwd()
 
-for year, image_set in sets:
-    if not os.path.exists('VOCDevkit/VOC%s/labels/'%(year)):
-        os.makedirs('VOCDevkit/VOC%s/labels/'%(year))
-    image_ids = open('VOCDevkit/VOC%s/ImageSets/Main/%s.txt'%(year, image_set)).read().strip().split()
-    list_file = open('%s_%s.txt'%(year, image_set), 'w')
+for image_set in sets:
+    print(labels_folder)
+    if not os.path.exists(labels_folder):
+        os.makedirs(labels_folder)
+
+    image_ids = open(os.path.join(os.path.abspath(
+        folder_path), 'ImageSets/Main/{}.txt'.format(image_set))).read().strip().split()
+    list_file = open(os.path.join(os.path.abspath(
+        folder_path), '{}.txt'.format(image_set)), 'w')
     for image_id in image_ids:
-        list_file.write('%s/VOCDevkit/VOC%s/JPEGImages/%s.jpg\n'%(wd, year, image_id))
-        convert_annotation(year, image_id)
-    list_file.close()
 
+        list_file.write(os.path.join(os.path.abspath(
+            image_folder_path), '{}{}\n'.format(image_id, args.image_extension)))
+        convert_annotation(image_id)
+    list_file.close()
