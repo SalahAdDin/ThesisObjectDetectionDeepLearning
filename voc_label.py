@@ -62,7 +62,6 @@ def convert_annotation(image_id):
 
 
 for image_set in sets:
-    print(labels_folder)
     if not os.path.exists(labels_folder):
         os.makedirs(labels_folder)
 
