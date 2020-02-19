@@ -14,7 +14,7 @@ args = parser.parse_args()
 
 
 sets = ['train', 'val', 'test']
-classes = ["M", "uva", "almond", "apple", "mango"]
+classes = ["uva", "M", "almond", "apple", "mango"]
 
 folder_path = args.path
 annotation_folder_path = folder_path + "/Annotations/"
