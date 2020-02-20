@@ -14,7 +14,8 @@ args = parser.parse_args()
 
 
 sets = ['train', 'val', 'test']
-classes = ["uva", "M", "almond", "apple", "mango"]
+# No classes here: we are training one class per experiment
+# classes = ["uva", "M", "almond", "apple", "mango"] 
 
 folder_path = args.path
 annotation_folder_path = folder_path + "/Annotations/"
@@ -50,15 +51,15 @@ def convert_annotation(image_id):
     for obj in root.iter('object'):
         difficult = obj.find('difficult').text
         cls = obj.find('name').text
-        if cls not in classes or int(difficult) == 1:
-            continue
-        cls_id = classes.index(cls)
+        # if cls not in classes or int(difficult) == 1:
+        #     continue
+        # cls_id = classes.index(cls)
         xmlbox = obj.find('bndbox')
         b = (float(xmlbox.find('xmin').text), float(xmlbox.find('xmax').text), float(
             xmlbox.find('ymin').text), float(xmlbox.find('ymax').text))
         bb = convert((w, h), b)
-        out_file.write(str(cls_id) + " " +
-                       " ".join([str(a) for a in bb]) + '\n')
+        # str(cls_id)
+        out_file.write(str(0) + " " + " ".join([str(a) for a in bb]) + '\n')
 
 
 for image_set in sets:
