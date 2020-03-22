@@ -47,8 +47,8 @@ sudo pip3 install opencv-python vtk gdown
 
 echo "Creating project folder"
 # Creating the project folder structure
-# mkdir Proyectos
-# mkdir Proyectos/thesis
+# mkdir Projects/
+# mkdir Projects/thesis
 mkdir datasets
 mkdir networks
 mkdir logs
@@ -116,6 +116,6 @@ cat Makefile
 
 make
 
-cd ~/Proyectos/thesis
+cd ~/Projects/thesis
 mv voc_label.py networks/darknet/
 mv yolov3-voc.cfg networks/darknet/

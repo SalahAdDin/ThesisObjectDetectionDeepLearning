@@ -2,9 +2,9 @@
 # -- ENCODING: UTF-8 --
 echo " Setting Up the System"
 
-cd ~/Proyectos/thesis/networks/darknet/
+cd ~/Projects/thesis/networks/darknet/
 
-# TODO: Review paths ~/Proyectos/thesis/
+# TODO: Review paths ~/Projects/thesis/
 
 echo "Reviewing Setup"
 
@@ -89,3 +89,5 @@ echo "ACFR Apples"
 ./darknet detector map apple.data yolov3-voc.cfg ../../models/yolov3-acfr-apple.weights -iou_thresh 0.3 > ../../logs/evaluating/yolo_v3_apples.log
 echo "ACFR Mangoes"
 ./darknet detector map mango.data yolov3-voc.cfg ../../models/yolov3-acfr-mango.weights -iou_thresh 0.3 > ../../logs/evaluating/yolo_v3_mangoes.log
+
+cd ~/Projects/thesis/

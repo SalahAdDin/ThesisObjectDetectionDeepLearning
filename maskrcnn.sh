@@ -2,7 +2,7 @@
 # -- ENCODING: UTF-8 --
 echo " Setting Up the System"
 
-cd ~/Proyectos/thesis/networks/Mask_RCNN/
+cd ~/Projects/thesis/networks/Mask_RCNN/
 source bin/activate
 
 echo "Reviewing Setup"
@@ -71,3 +71,5 @@ echo "WGISD Grapes"
 python samples/voc/voc.py test --dataset=../../datasets/wgisd --model=../../models/mask_rcnn_wgisd.h5 --class-name=uva > ../../logs/evaluating/mask_rcnn_wgisd.log
 
 deactivate
+
+cd ~/Projects/thesis/

@@ -2,7 +2,7 @@
 # -- ENCODING: UTF-8 --
 echo " Setting Up the System"
 
-cd ~/Proyectos/thesis/networks/keras-retinanet/
+cd ~/Projects/thesis/networks/keras-retinanet/
 source bin/activate
 
 echo "Reviewing Setup"
@@ -65,3 +65,5 @@ echo "ACFR Mangoes"
 keras_retinanet/bin/evaluate.py --convert-model --iou-threshold 0.3 --save-path ../../images pascal --image-extension '.png' ../../datasets/acfr-fruit-dataset/mangoes/ ../../models/resnet50_pascal_mangoes.h5 > ../../logs/evaluating/retinanet_mangoes.log
 
 deactivate
+
+cd ~/Projects/thesis/
