@@ -80,12 +80,12 @@ sed -i 's|valid = '$HOME'/Projects/thesis/datasets/acfr-fruit-dataset/mangoes/va
 sed -i 's|valid = '$HOME'/Projects/thesis/datasets/VOCDevkit/VOC2007/val.txt|valid = '$HOME'/Projects/thesis/datasets/VOCDevkit/VOC2007/test.txt|g' m.data
 
 echo "Mango YOLO"
-./darknet detector map m.data yolov3-voc.cfg ../../models/yolov3-mango.weights -iou_thresh 0.3
+./darknet detector map m.data yolov3-voc.cfg ../../models/yolov3-mango.weights -iou_thresh 0.3 > ../../logs/evaluating/yolo_v3_mango_yolo.log
 echo "WGISD Grapes"
-./darknet detector map uva.data yolov3-voc.cfg ../../models/yolov3-wgisd.weights -iou_thresh 0.3
+./darknet detector map uva.data yolov3-voc.cfg ../../models/yolov3-wgisd.weights -iou_thresh 0.3 > ../../logs/evaluating/yolo_v3_wgisd.log
 echo "ACFR Almonds"
-./darknet detector map almond.data yolov3-voc.cfg ../../models/yolov3-acfr-almond.weights -iou_thresh 0.3
+./darknet detector map almond.data yolov3-voc.cfg ../../models/yolov3-acfr-almond.weights -iou_thresh 0.3 > ../../logs/evaluating/yolo_v3_almonds.log
 echo "ACFR Apples"
-./darknet detector map apple.data yolov3-voc.cfg ../../models/yolov3-acfr-apple.weights -iou_thresh 0.3
+./darknet detector map apple.data yolov3-voc.cfg ../../models/yolov3-acfr-apple.weights -iou_thresh 0.3 > ../../logs/evaluating/yolo_v3_apples.log
 echo "ACFR Mangoes"
-./darknet detector map mango.data yolov3-voc.cfg ../../models/yolov3-acfr-mango.weights -iou_thresh 0.3
+./darknet detector map mango.data yolov3-voc.cfg ../../models/yolov3-acfr-mango.weights -iou_thresh 0.3 > ../../logs/evaluating/yolo_v3_mangoes.log
