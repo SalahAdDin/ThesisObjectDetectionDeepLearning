@@ -54,14 +54,14 @@ rm -rf snapshots/*
 echo "Evaluating Model"
 
 echo "Mango YOLO"
-keras_retinanet/bin/evaluate.py --convert-model --iou-threshold 0.3 --save-path ../../images pascal ../../datasets/VOCDevkit/VOC2007/ ../../models/resnet50_pascal_mango_yolo.h5 > logs/evaluating/retinanet_mango_yolo.log
+keras_retinanet/bin/evaluate.py --convert-model --iou-threshold 0.3 --save-path ../../images pascal ../../datasets/VOCDevkit/VOC2007/ ../../models/resnet50_pascal_mango_yolo.h5 > ../../logs/evaluating/retinanet_mango_yolo.log
 echo "WGISD Grapes"
-keras_retinanet/bin/evaluate.py --convert-model --iou-threshold 0.3 --save-path ../../images pascal ../../datasets/wgisd/ ../../models/resnet50_pascal_wgisd.h5 > logs/evaluating/retinanet_wgisd.log
+keras_retinanet/bin/evaluate.py --convert-model --iou-threshold 0.3 --save-path ../../images pascal ../../datasets/wgisd/ ../../models/resnet50_pascal_wgisd.h5 > ../../logs/evaluating/retinanet_wgisd.log
 echo "ACFR Almonds"
-keras_retinanet/bin/evaluate.py --convert-model --iou-threshold 0.3 --save-path ../../images pascal --image-extension '.png' ../../datasets/acfr-fruit-dataset/almonds/ ../../models/resnet50_pascal_almonds.h5 > logs/evaluating/retinanet_almonds.log
+keras_retinanet/bin/evaluate.py --convert-model --iou-threshold 0.3 --save-path ../../images pascal --image-extension '.png' ../../datasets/acfr-fruit-dataset/almonds/ ../../models/resnet50_pascal_almonds.h5 > ../../logs/evaluating/retinanet_almonds.log
 echo "ACFR Apples"
-keras_retinanet/bin/evaluate.py --convert-model --iou-threshold 0.3 --save-path ../../images pascal --image-extension '.png' ../../datasets/acfr-fruit-dataset/apples/ ../../models/resnet50_pascal_apples.h5 > logs/evaluating/retinanet_apples.log
+keras_retinanet/bin/evaluate.py --convert-model --iou-threshold 0.3 --save-path ../../images pascal --image-extension '.png' ../../datasets/acfr-fruit-dataset/apples/ ../../models/resnet50_pascal_apples.h5 > ../../logs/evaluating/retinanet_apples.log
 echo "ACFR Mangoes"
-keras_retinanet/bin/evaluate.py --convert-model --iou-threshold 0.3 --save-path ../../images pascal --image-extension '.png' ../../datasets/acfr-fruit-dataset/mangoes/ ../../models/resnet50_pascal_mangoes.h5 > logs/evaluating/retinanet_mangoes.log
+keras_retinanet/bin/evaluate.py --convert-model --iou-threshold 0.3 --save-path ../../images pascal --image-extension '.png' ../../datasets/acfr-fruit-dataset/mangoes/ ../../models/resnet50_pascal_mangoes.h5 > ../../logs/evaluating/retinanet_mangoes.log
 
 deactivate

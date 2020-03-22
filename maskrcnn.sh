@@ -22,52 +22,52 @@ echo "Training Net"
 # wget -P models https://github.com/fizyr/keras-models/releases/download/v0.0.1/ResNet-50-model.keras.h5
 
 echo "MangoYOLO"
-echo "Start Time: $(date +"%T")">> ../../logs/mask_rcnn_execution.txt
-python /content/Mask_RCNN/samples/voc/voc.py train --dataset=/content/dataset/VOCDevkit/VOC2007/ --model=imagenet --class-name=M
+echo "Start Time: $(date +"%T")" >> ../../logs/mask_rcnn_execution.txt
+python samples/voc/voc.py train --dataset=../../datasets/VOCDevkit/VOC2007/ --model=imagenet --class-name=M > ../../logs/training/mask_rcnn_mango_yolo.log
 echo "Finish time: $(date +"%T")" >> ../../logs/mask_rcnn_execution.txt
-mv snapshots/resnet50_pascal_10.h5 ../../models/resnet50_pascal_mango_yolo.h5
+mv snapshots/resnet50_pascal_10.h5 ../../models/mask_rcnn_mango_yolo.h5
 rm -rf snapshots/*
 
 echo "ACFR Almonds"
-echo "Start Time: $(date +"%T")">> ../../logs/mask_rcnn_execution.txt
-python /content/Mask_RCNN/samples/voc/voc.py train --dataset=/content/dataset/VOCDevkit/VOC2007/ --model=imagenet --class-name=almond
+echo "Start Time: $(date +"%T")" >> ../../logs/mask_rcnn_execution.txt
+python samples/voc/voc.py train --dataset=../../datasets/acfr-fruit-dataset/almonds/ --model=imagenet --class-name=almond --image-extension '.png' > ../../logs/training/mask_rcnn_almonds.log
 echo "Finish time: $(date +"%T")" >> ../../logs/mask_rcnn_execution.txt
-mv snapshots/resnet50_pascal_10.h5 ../../models/resnet50_pascal_almonds.h5
+mv snapshots/resnet50_pascal_10.h5 ../../models/mask_rcnn_acfr_almond.h5
 rm -rf snapshots/*
 
 echo "ACFR Apples"
-echo "Start Time: $(date +"%T")">> ../../logs/mask_rcnn_execution.txt
-python /content/Mask_RCNN/samples/voc/voc.py train --dataset=/content/dataset/VOCDevkit/VOC2007/ --model=imagenet --class-name=apple
+echo "Start Time: $(date +"%T")" >> ../../logs/mask_rcnn_execution.txt
+python samples/voc/voc.py train --dataset=../../datasets/acfr-fruit-dataset/apples/ --model=imagenet --class-name=apple --image-extension '.png' > ../../logs/training/mask_rcnn_apples.log
 echo "Finish time: $(date +"%T")" >> ../../logs/mask_rcnn_execution.txt
-mv snapshots/resnet50_pascal_10.h5 ../../models/resnet50_pascal_apples.h5
+mv snapshots/resnet50_pascal_10.h5 ../../models/mask_rcnn_acfr_apple.h5
 rm -rf snapshots/*
 
 echo "ACFR Mangoes"
-echo "Start Time: $(date +"%T")">> ../../logs/mask_rcnn_execution.txt
-python /content/Mask_RCNN/samples/voc/voc.py train --dataset=/content/dataset/VOCDevkit/VOC2007/ --model=imagenet --class-name=mango
+echo "Start Time: $(date +"%T")" >> ../../logs/mask_rcnn_execution.txt
+python samples/voc/voc.py train --dataset=../../datasets/acfr-fruit-dataset/mangoes/ --model=imagenet --class-name=mango --image-extension '.png' > ../../logs/training/mask_rcnn_mangoes.log
 echo "Finish time: $(date +"%T")" >> ../../logs/mask_rcnn_execution.txt
-mv snapshots/resnet50_pascal_10.h5 ../../models/resnet50_pascal_mangoes.h5
+mv snapshots/resnet50_pascal_10.h5 ../../models/mask_rcnn_acfr_mango.h5
 rm -rf snapshots/*
 
 echo "WGISD Grapes"
-echo "Start Time: $(date +"%T")">> ../../logs/mask_rcnn_execution.txt
-python /content/Mask_RCNN/samples/voc/voc.py train --dataset=/content/dataset/VOCDevkit/VOC2007/ --model=imagenet --class-name=uva
+echo "Start Time: $(date +"%T")" >> ../../logs/mask_rcnn_execution.txt
+python samples/voc/voc.py train --dataset=../../datasets/wgisd/ --model=imagenet --class-name=uva > ../../logs/training/mask_rcnn_wgisd.log
 echo "Finish time: $(date +"%T")" >> ../../logs/mask_rcnn_execution.txt
-mv snapshots/resnet50_pascal_10.h5 ../../models/resnet50_pascal_wgisd.h5
+mv snapshots/resnet50_pascal_10.h5 ../../models/mask_rcnn_wgisd.h5
 rm -rf snapshots/*
 
 echo "Evaluating Model"
 
 # TODO: Fix
 echo "Mango YOLO"
-python /content/Mask_RCNN/samples/voc/voc.py test --dataset=/content/dataset/VOCDevkit/VOC2007/ --model=/content/models/mask_rcnn_mango_yolo.h5 --class-name=M
+python samples/voc/voc.py test --dataset=../../datasets/VOCDevkit/VOC2007/ --model=../../models/mask_rcnn_mango_yolo.h5 --class-name=M > ../../logs/evaluating/mask_rcnn_mango_yolo.log
 echo "ACFR Almonds"
-python /content/Mask_RCNN/samples/voc/voc.py test --dataset=/content/dataset/VOCDevkit/VOC2007/ --model=/content/models/mask_rcnn_acfr_almond.h5 --class-name=almond
+python samples/voc/voc.py test --dataset=../../datasets/acfr-fruit-dataset/almonds --model=../../models/mask_rcnn_acfr_almond.h5 --class-name=almond --image-extension '.png' > ../../logs/evaluating/mask_rcnn_almonds.log
 echo "ACFR Apples"
-python /content/Mask_RCNN/samples/voc/voc.py test --dataset=/content/dataset/VOCDevkit/VOC2007/ --model=/content/models/mask_rcnn_acfr_apple.h5 --class-name=apple
+python samples/voc/voc.py test --dataset=../../datasets/acfr-fruit-dataset/apples --model=../../models/mask_rcnn_acfr_apple.h5 --class-name=apple --image-extension '.png' > ../../logs/evaluating/mask_rcnn_apples.log
 echo "ACFR Mangoes"
-python /content/Mask_RCNN/samples/voc/voc.py test --dataset=/content/dataset/VOCDevkit/VOC2007/ --model=/content/models/mask_rcnn_acfr_mango.h5 --class-name=mango
+python samples/voc/voc.py test --dataset=../../datasets/acfr-fruit-dataset/mangoes --model=../../models/mask_rcnn_acfr_mango.h5 --class-name=mango --image-extension '.png' > ../../logs/evaluating/mask_rcnn_mangoes.log
 echo "WGISD Grapes"
-python /content/Mask_RCNN/samples/voc/voc.py test --dataset=/content/dataset/VOCDevkit/VOC2007/ --model=/content/models/mask_rcnn_wgisd.h5 --class-name=uva
+python samples/voc/voc.py test --dataset=../../datasets/wgisd --model=../../models/mask_rcnn_wgisd.h5 --class-name=uva > ../../logs/evaluating/mask_rcnn_wgisd.log
 
 deactivate

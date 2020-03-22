@@ -1,4 +1,6 @@
-folder_path = '/content/darknet/dataset/wgisd'
+import os
+
+folder_path = '../../datasets/wgisd_yolo'
 image_folder_path = folder_path + "/data/"
 
 sets = ['train', 'test']

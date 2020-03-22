@@ -5,7 +5,8 @@ echo " Setting Up the System"
 # Upgrading the system
 sudo apt update && sudo apt upgrade
 sudo apt -y install linux-headers-$(uname -r)
-sudo apt -y install curl cmake build-essential libavcodec-dev libavformat-dev libswscale-dev libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev libomp-dev software-properties-common
+# TODO: Review required packages
+sudo apt -y install curl cmake build-essential libavcodec-dev libavformat-dev libswscale-dev libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev libomp-dev software-properties-common unzip
 
 # Reboot
 
@@ -42,7 +43,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64
 sudo apt autoremove
 
 sudo apt install python3-virtualenv
-sudo pip3 install opencv-python vtk
+sudo pip3 install opencv-python vtk gdown
 
 echo "Creating project folder"
 # Creating the project folder structure
@@ -67,11 +68,15 @@ echo "Getting datasets"
 # TODO: review this
 cd datasets
 git clone https://github.com/avadesh02/MangoNet-Semantic-Dataset
-git clone https://github.com/SalahAdDin/wgisd
-git clone https://github.com/SalahAdDin/acfr-fruit-dataset
+git clone https://github.com/thsant/wgisd wgisd_yolo
+gdown https://drive.google.com/uc?id=1iZbPYck5BuIsZ9GQCSHI4LlqMyxmCrP9
+unzip MangoYOLO.zip
+gdown https://drive.google.com/uc?id=1L2feEdder8H5U1G5FjH6lsx6u3yapXfx
+unzip wgisd.zip
+gdown https://drive.google.com/uc?id=1d0DXYLCAZHrL4RudWP_4Gty46MSRH4_G
+unzip acfr-fruit-dataset.zip
 
 # Cloning the networks
-# TODO: review this
 echo "Cloning networks"
 cd networks
 git clone https://github.com/SalahAdDin/Mask_RCNN.git --branch voc --single-branch
@@ -95,6 +100,7 @@ virtualenv -p python3 Mask_RCNN/
 cd ../Mask_RCNN/
 source bin/activate
 pip install -r requirements.txt
+pip install -U tensorflow-gpu==1.15
 python setup.py install
 deactivate
 
@@ -111,4 +117,5 @@ cat Makefile
 make
 
 cd ~/Proyectos/thesis
-
+mv voc_label.py networks/darknet/
+mv yolov3-voc.cfg networks/darknet/
