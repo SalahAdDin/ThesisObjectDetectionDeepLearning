@@ -47,7 +47,7 @@ plt.xlabel('Epochs')
 plt.title('Performance development by Epochs')
 plt.legend()
 
-figure_name = path.replace(".log", "_summary.png")
+figure_name = path.replace(".log", "_{}_summary.png".format(str(steps)))
 fig.savefig(figure_name, dpi=1000)
 
 print('Done! Plot saved as ' + figure_name)
@@ -75,7 +75,7 @@ plt.xlabel('Epochs')
 plt.title('Performance development by Steps')
 plt.legend()
 
-figure_name = path.replace(".log", "_steps.png")
+figure_name = path.replace(".log", "_{}_steps.png".format(str(steps)))
 fig.savefig(figure_name, dpi=1000)
 
 print('Done! Plot saved as ' + figure_name)
