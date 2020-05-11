@@ -18205,3 +18205,7 @@ Loaded: 0.000048 seconds
 Loaded: 0.000041 seconds
 
  5200: 1.009392, 1.052727 avg loss, 0.000100 rate, 8.215127 seconds, 332800 images, 0.163434 hours left
+ 
+Training time in seconds:  30600
+Training time in hours:  8.5
+
