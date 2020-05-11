@@ -20,7 +20,7 @@ print(names)
 
 fig = plt.figure()
 axes = fig.add_subplot(111)
-cmap = matplotlib.cm.get_cmap('jet')
+cmap = matplotlib.cm.get_cmap('Dark2')
 ls = [(0, (3, 1, 1, 1, 1, 1)), '--', '-.', ':', (0, (3, 5, 1, 5, 1, 5)), ]
 
 for j, trace in enumerate(traces):
