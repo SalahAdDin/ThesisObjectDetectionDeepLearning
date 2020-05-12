@@ -60,7 +60,7 @@ fig.legend(lines, labels,
 plt.xlabel('Batch Number')
 plt.ylabel('Avg Loss')
 
-figure_name = "all_{}_plot.png".format(str(batches))
+figure_name = "yolo_all_{}_plot.png".format(str(batches))
 fig.savefig(figure_name, dpi=1000)
 
 print('Done! Plot saved as {}'.format(figure_name))

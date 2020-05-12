@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 parser = argparse.ArgumentParser()
 parser.add_argument("-p", "--path", help="Log file path")  # log file path
 parser.add_argument("-s", "--steps", type=int,
-                    help="Step's number")  # step's number
+                    help="Step's number used at training")  # step's number
 args = parser.parse_args()
 
 path = args.path
@@ -42,7 +42,6 @@ for line in open(path):
 
 fig = plt.figure()
 plt.plot(epoch_number, avg_loss, label="Average Loss")
-plt.plot(epoch_number, f1_score, label="F1 Score")
 plt.xlabel('Epochs')
 plt.title('Performance development by Epochs')
 plt.legend()
