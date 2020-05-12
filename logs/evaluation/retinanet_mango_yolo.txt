@@ -1,0 +1,112 @@
+Using TensorFlow backend.
+2020-05-12 20:28:28.332929: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+Loading model, this may take a second...
+2020-05-12 20:28:31.350161: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2020-05-12 20:28:31.355310: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-12 20:28:31.355895: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1561] Found device 0 with properties: 
+pciBusID: 0000:00:04.0 name: Tesla P100-PCIE-16GB computeCapability: 6.0
+coreClock: 1.3285GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-12 20:28:31.355936: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-12 20:28:31.359479: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-05-12 20:28:31.361333: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-05-12 20:28:31.361684: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-05-12 20:28:31.363584: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-05-12 20:28:31.364774: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-05-12 20:28:31.368523: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-12 20:28:31.368633: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-12 20:28:31.369184: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-12 20:28:31.369745: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1703] Adding visible gpu devices: 0
+2020-05-12 20:28:31.374718: I tensorflow/core/platform/profile_utils/cpu_utils.cc:102] CPU Frequency: 2200000000 Hz
+2020-05-12 20:28:31.374913: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x17d8d80 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-05-12 20:28:31.374943: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-05-12 20:28:31.475121: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-12 20:28:31.476025: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x17d8f40 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2020-05-12 20:28:31.476059: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Tesla P100-PCIE-16GB, Compute Capability 6.0
+2020-05-12 20:28:31.476266: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-12 20:28:31.476779: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1561] Found device 0 with properties: 
+pciBusID: 0000:00:04.0 name: Tesla P100-PCIE-16GB computeCapability: 6.0
+coreClock: 1.3285GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-12 20:28:31.476860: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-12 20:28:31.476906: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-05-12 20:28:31.476927: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-05-12 20:28:31.476947: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-05-12 20:28:31.476966: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-05-12 20:28:31.476984: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-05-12 20:28:31.477003: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-12 20:28:31.477084: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-12 20:28:31.477610: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-12 20:28:31.478110: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1703] Adding visible gpu devices: 0
+2020-05-12 20:28:31.478162: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-12 20:28:31.992265: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-05-12 20:28:31.992322: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1108]      0 
+2020-05-12 20:28:31.992334: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1121] 0:   N 
+2020-05-12 20:28:31.992595: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-12 20:28:31.993208: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-12 20:28:31.993719: W tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:39] Overriding allow_growth setting because the TF_FORCE_GPU_ALLOW_GROWTH environment variable is set. Original config value was 0.
+2020-05-12 20:28:31.993772: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1247] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 14651 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-16GB, pci bus id: 0000:00:04.0, compute capability: 6.0)
+tracking <tf.Variable 'Variable:0' shape=(9, 4) dtype=float32, numpy=
+array([[-22.627417, -11.313708,  22.627417,  11.313708],
+       [-28.50876 , -14.25438 ,  28.50876 ,  14.25438 ],
+       [-35.918785, -17.959393,  35.918785,  17.959393],
+       [-16.      , -16.      ,  16.      ,  16.      ],
+       [-20.158737, -20.158737,  20.158737,  20.158737],
+       [-25.398417, -25.398417,  25.398417,  25.398417],
+       [-11.313708, -22.627417,  11.313708,  22.627417],
+       [-14.25438 , -28.50876 ,  14.25438 ,  28.50876 ],
+       [-17.959393, -35.918785,  17.959393,  35.918785]], dtype=float32)> anchors
+tracking <tf.Variable 'Variable:0' shape=(9, 4) dtype=float32, numpy=
+array([[-45.254833, -22.627417,  45.254833,  22.627417],
+       [-57.01752 , -28.50876 ,  57.01752 ,  28.50876 ],
+       [-71.83757 , -35.918785,  71.83757 ,  35.918785],
+       [-32.      , -32.      ,  32.      ,  32.      ],
+       [-40.317474, -40.317474,  40.317474,  40.317474],
+       [-50.796833, -50.796833,  50.796833,  50.796833],
+       [-22.627417, -45.254833,  22.627417,  45.254833],
+       [-28.50876 , -57.01752 ,  28.50876 ,  57.01752 ],
+       [-35.918785, -71.83757 ,  35.918785,  71.83757 ]], dtype=float32)> anchors
+tracking <tf.Variable 'Variable:0' shape=(9, 4) dtype=float32, numpy=
+array([[ -90.50967 ,  -45.254833,   90.50967 ,   45.254833],
+       [-114.03504 ,  -57.01752 ,  114.03504 ,   57.01752 ],
+       [-143.67514 ,  -71.83757 ,  143.67514 ,   71.83757 ],
+       [ -64.      ,  -64.      ,   64.      ,   64.      ],
+       [ -80.63495 ,  -80.63495 ,   80.63495 ,   80.63495 ],
+       [-101.593666, -101.593666,  101.593666,  101.593666],
+       [ -45.254833,  -90.50967 ,   45.254833,   90.50967 ],
+       [ -57.01752 , -114.03504 ,   57.01752 ,  114.03504 ],
+       [ -71.83757 , -143.67514 ,   71.83757 ,  143.67514 ]],
+      dtype=float32)> anchors
+tracking <tf.Variable 'Variable:0' shape=(9, 4) dtype=float32, numpy=
+array([[-181.01933,  -90.50967,  181.01933,   90.50967],
+       [-228.07008, -114.03504,  228.07008,  114.03504],
+       [-287.35028, -143.67514,  287.35028,  143.67514],
+       [-128.     , -128.     ,  128.     ,  128.     ],
+       [-161.2699 , -161.2699 ,  161.2699 ,  161.2699 ],
+       [-203.18733, -203.18733,  203.18733,  203.18733],
+       [ -90.50967, -181.01933,   90.50967,  181.01933],
+       [-114.03504, -228.07008,  114.03504,  228.07008],
+       [-143.67514, -287.35028,  143.67514,  287.35028]], dtype=float32)> anchors
+tracking <tf.Variable 'Variable:0' shape=(9, 4) dtype=float32, numpy=
+array([[-362.03867, -181.01933,  362.03867,  181.01933],
+       [-456.14017, -228.07008,  456.14017,  228.07008],
+       [-574.70056, -287.35028,  574.70056,  287.35028],
+       [-256.     , -256.     ,  256.     ,  256.     ],
+       [-322.5398 , -322.5398 ,  322.5398 ,  322.5398 ],
+       [-406.37466, -406.37466,  406.37466,  406.37466],
+       [-181.01933, -362.03867,  181.01933,  362.03867],
+       [-228.07008, -456.14017,  228.07008,  456.14017],
+       [-287.35028, -574.70056,  287.35028,  574.70056]], dtype=float32)> anchors
+Running network: N/A% (0 of 300) |        | Elapsed Time: 0:00:00 ETA:  --:--:--2020-05-12 20:28:55.182496: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-12 20:28:56.124955: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+Running network: 100% (300 of 300) |######| Elapsed Time: 0:00:34 Time:  0:00:34
+Parsing annotations: 100% (300 of 300) |##| Elapsed Time: 0:00:00 Time:  0:00:00
+0 instances of class apple with average precision: 0.0000
+0 instances of class almond with average precision: 0.0000
+0 instances of class mango with average precision: 0.0000
+2600 instances of class M with average precision: 0.9764
+0 instances of class uva with average precision: 0.0000
+2600 instances of class M with F1 score: 0.9992
+Inference time for 300 images: 0.0716
+mAP using the weighted average of precisions among classes: 0.9764
+mAP: 0.9764
+mF1 using the weighted F1 scores among classes: 0.0000
+mF1: 0.9992
