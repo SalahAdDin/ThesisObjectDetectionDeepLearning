@@ -18205,3 +18205,9 @@ Loaded: 0.000043 seconds
 Loaded: 0.000045 seconds
 
  5200: 0.613267, 0.534995 avg loss, 0.000100 rate, 7.780673 seconds, 332800 images, 0.153394 hours left
+
+ Saving weights to /content/darknet/backup//yolov3-voc_last.weights
+Saving weights to /content/darknet/backup//yolov3-voc_final.weights
+Training time in seconds:  27520.5254714489
+Training time in hours:  7.644590408735805
+'/content/gdrive/My Drive/Colab Notebooks/train_acfr_mango.log'
