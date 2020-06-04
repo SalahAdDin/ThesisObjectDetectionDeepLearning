@@ -21009,5 +21009,5 @@ Loaded: 0.000041 seconds
 
  6000: 0.406393, 0.609594 avg loss, 0.000010 rate, 11.585491 seconds, 384000 images, 0.244415 hours left
  
-Training time in seconds:  47.760
+Training time in seconds:  47760
 Training time in hours:  13.26
