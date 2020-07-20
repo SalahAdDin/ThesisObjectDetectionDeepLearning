@@ -75,7 +75,7 @@ fig.legend(lines, labels,
            loc='upper right', bbox_to_anchor=(0.85, 0.85))
 
 plt.xlabel('Epochs')
-plt.ylabel("Average Loss")
+plt.ylabel("Average Accuracy")
 
 plt.title('Performance development by Epochs')
 
